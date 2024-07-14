@@ -1,0 +1,43 @@
+<mat-selection-list #shoes>
+  <h1>Personajes</h1>
+    @for (i of listaPersonajes.results; track $index) {
+      <li ><button mat-raised-button (click)="openDialog(i.id)">{{i.id}}. {{i.name}}</button></li>
+      <br>
+    }
+
+  <div class="example-button-row">
+    <div class="example-flex-container">
+      <div class="example-button-container" style="display:flex;">
+        @if(listaPersonajes.info.prev === null){
+          <button mat-fab extended >
+            <mat-icon>favorite</mat-icon>
+            PrevPage
+          </button>
+        }@else{
+          <button mat-fab extended (click)="siguientePagina(listaPersonajes.info.prev)">
+            <mat-icon>favorite</mat-icon>
+            PrevPage
+          </button>
+        }
+        <div class="example-button-container"></div>
+        @if(listaPersonajes.info.next === null){
+          <button mat-fab extended >
+            <mat-icon>favorite</mat-icon>
+            PrevPage
+          </button>
+        }@else{
+          <button mat-fab extended (click)="siguientePagina(listaPersonajes.info.next)">
+            <mat-icon>favorite</mat-icon>
+            PrevPage
+          </button>
+        }        
+      </div>
+    </div>
+  </div>
+
+<br>
+
+
+
+
+
